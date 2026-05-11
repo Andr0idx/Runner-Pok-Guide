@@ -1,7 +1,10 @@
 name: Desktop (Windows)
 
-on:
-  workflow_dispatch:
+"on":
+  workflow_dispatch: {}
+  push:
+    branches:
+      - main
 
 jobs:
   build-windows:
@@ -30,5 +33,5 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: PokéGuide-windows-portable
+          name: PokeGuide-windows-portable
           path: web/dist-desktop/*.exe
